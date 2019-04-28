@@ -1,0 +1,10 @@
+subject_id,Sex,Age(years),Height(cm),Weight(kg),Resting HR(bpm),Max HR(bpm),Dominant_hand
+subject101,Male,27,182,83,75,193,right
+subject102,Female,25,169,78,74,195,right
+subject103,Male,31,187,92,68,189,right
+subject104,Male,24,194,95,58,196,right
+subject105,Male,26,180,73,70,194,right
+subject106,Male,26,183,69,60,194,right
+subject107,Male,23,173,86,60,197,right
+subject108,Male,32,179,87,66,188,left
+subject109,Male,31,168,65,54,189,right
