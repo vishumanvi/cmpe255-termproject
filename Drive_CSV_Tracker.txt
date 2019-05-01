@@ -1,0 +1,30 @@
+
+# Code = CMPE255-HumanActivityClassifier_base.ipynb
+# CSV  = normalized_data.csv [https://drive.google.com/open?id=1gCnOf1OtcCvTx1_r8lJtoSL5CBz6MIy5]
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
+
+# Code = 
+# CSV  =  []
