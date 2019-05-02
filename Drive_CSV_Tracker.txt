@@ -1,31 +1,32 @@
 
 # Code = CMPE255-HumanActivityClassifier_Base_2.0.ipynb
-# CSV  = preprocessed_data.csv [https://drive.google.com/open?id=1gCnOf1OtcCvTx1_r8lJtoSL5CBz6MIy5]
+# OutputCSV  = preprocessed_data.csv [https://drive.google.com/open?id=1rLMqVoVTZjVbBNAgMS5TyMiZs9lLVjwK]
+# OutputCSV  = labels.csv [https://drive.google.com/open?id=1mA4cYi2WdgypIlMtq8zf6QmsmMCSZO0H]
 
 # Code = CMPE255-HumanClassifier_DimReduction.ipynb
-# CSV  =  preprocessed_data_SVD.csv []
-# CSV  =  preprocessed_data_PCA.csv []
+# OutputCSV  =  preprocessed_data_SVD.csv [https://drive.google.com/open?id=1EStTzcxWFbEsCgk2mEV4qRvu9kWdG65f]
+# OutputCSV  =  preprocessed_data_PCA.csv [https://drive.google.com/open?id=1Zdp3RQsXmjQUlbIFbEPaBQfdMMeKclLe]
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
 
 # Code = 
-# CSV  =  []
+# OutputCSV  =  []
