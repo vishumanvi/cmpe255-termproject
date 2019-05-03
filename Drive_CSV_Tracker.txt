@@ -7,8 +7,8 @@
 # OutputCSV  =  preprocessed_data_SVD.csv [https://drive.google.com/open?id=1EStTzcxWFbEsCgk2mEV4qRvu9kWdG65f]
 # OutputCSV  =  preprocessed_data_PCA.csv [https://drive.google.com/open?id=1Zdp3RQsXmjQUlbIFbEPaBQfdMMeKclLe]
 
-# Code = 
-# OutputCSV  =  []
+# Code = Logistic Regression.ipynb
+# OutputFile  =  [lr_model.pkl]
 
 # Code = 
 # OutputCSV  =  []
