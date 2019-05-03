@@ -5,3 +5,16 @@ dataset/Protocol/.ipynb_checkpoints/Untitled-checkpoint.ipynb
 .ipynb_checkpoints/CMPE255-HumanActivityClassifier-checkpoint.ipynb
 Test.ipynb
 complete_dataset.csv
+complete_dataset.csv.zip
+CMPE255-HumanActivityClassifier-Copy1.ipynb
+.ipynb_checkpoints/SVM Using PCA-checkpoint.ipynb
+.ipynb_checkpoints/PickleDb Classifier Test-checkpoint.ipynb
+.ipynb_checkpoints/CMPE255-HumanActivityClassifier-Copy1-checkpoint.ipynb
+complete_dataset_1.csv
+complete_dataset_2.csv
+labels.csv
+normalized_data.csv
+normalized_data.csv.zip
+customized_data/preprocessed_data_PCA.csv
+customized_data/preprocessed_data_SVD.csv
+PickleDb Classifier Test.ipynb
