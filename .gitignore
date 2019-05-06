@@ -25,3 +25,29 @@ normalized_data_after_interpolation.csv
 Data after PCA and SVD.zip
 ActivityDatasets.zip
 /ActivityDatasets
+.ipynb_checkpoints/Random Forest-checkpoint.ipynb
+.ipynb_checkpoints/Random Forest SVD-checkpoint.ipynb
+.ipynb_checkpoints/Random Forest PCA-checkpoint.ipynb
+.ipynb_checkpoints/deleteme-checkpoint.ipynb
+.ipynb_checkpoints/Creating test files-checkpoint.ipynb
+.ipynb_checkpoints/CMPE255-HumanClassifier_DimReduction-checkpoint.ipynb
+.ipynb_checkpoints/SVM Using SVD-checkpoint.ipynb
+.ipynb_checkpoints/Untitled-checkpoint.ipynb
+CSVs/test_activity.csv
+CSVs/ActivityDatasets_without_normalization.zip
+CSVs/ActivityDatasets_normalized.zip
+ClassifiersPickleFIles/svm_rbf_model.pkl
+ClassifiersPickleFIles/svm_model_SVD_98.pkl
+ClassifiersPickleFIles/svm_model_PCA_98.pkl
+ClassifiersPickleFIles/randomforest_svd.pkl
+ClassifiersPickleFIles/randomforest_pca.pkl
+ClassifiersPickleFIles/randomforest.pkl
+svm_model_PCA_98.pkl
+svm_model_SVD_98.pkl
+svm_rbf_model.pkl
+svm_model_PCA_98.pkl
+svm_model_SVD_98.pkl
+svm_rbf_model.pkl
+.ipynb_checkpoints/Untitled1-checkpoint.ipynb
+.ipynb_checkpoints/Creating test files-Copy1-checkpoint.ipynb
+.ipynb_checkpoints/CMPE255-HumanActivityClassifier_Base_V2.0-checkpoint.ipynb
