@@ -48,10 +48,6 @@ def test_data():
     except FileNotFoundError as e:
         print(e)
 
-    if modelname == "SVM":
-        print("Normalizing data for SVM")
-        test_df = (test_df - test_df.mean()) / test_df.std()
-
     print(test_df.shape)
     predicted_values = clf.predict(test_df)
     counts = np.bincount(predicted_values)
