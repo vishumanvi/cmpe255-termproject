@@ -42,16 +42,15 @@ def test_data():
     print("New labels_file : {} ".format(labels_file))
     labels_file = labels_file
     print(labels_file)
-    try:
-        labels_df = pd.read_csv(labels_file)
-
-    except FileNotFoundError as e:
-        print(e)
-
+    labels_df = pd.read_csv(labels_file)
     print(test_df.shape)
+    print(labels_df.shape)
+
     predicted_values = clf.predict(test_df)
     counts = np.bincount(predicted_values)
     final_class = np.argmax(counts)
+    print("final_class is : {}".format(final_class))
+
 
     try:
         if labels_df is not None:
