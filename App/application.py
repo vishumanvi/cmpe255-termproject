@@ -76,7 +76,7 @@ def test_data(result=None):
         "f1score":str(f1_score_final)
         }
 
-    return render_template("index.html",result = (js))
+    return render_template("index.html",result = js)
 
 if __name__ == "__main__":
     app.run(debug=True)
