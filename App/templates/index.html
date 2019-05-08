@@ -135,9 +135,19 @@
         <div>
           <table id="example" class="display" style="width:100%"></table>
 
-          <div id="res1" class="results">{{ result }}</div>
+          <div id="res1" class="results">{{ result["predicted_class"] }}</div>
           <div id="res2" class="results">{{ result }}</div>
           <div id="res3" class="results">{{ result }}</div>
+         
+          <table border="1" style="width:100%;text-align:center;"><tbody>
+            {% for key, segment in result.items() %}
+              <tr>
+                <td>{{ key }}</td>
+                <td>{{ segment }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
         </div>
       </div>
     </div>
