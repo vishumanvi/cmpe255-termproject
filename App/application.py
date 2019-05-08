@@ -1,21 +1,31 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, make_response
 from flask import request
 import pickle
 import pandas as pd
 import numpy as np
 import io
 import csv
+import json
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
-
+from werkzeug import secure_filename
 application = app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return 'OK'
+@app.route("/")
+def home():
+    # result = {"name":"Akshay","age":"24"}
+    return render_template("index.html")
 
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['test_file']
+      f.save(secure_filename(f.filename))
+
+      return 'file uploaded successfully'
+	
 @app.route('/test', methods=['POST'])
-def test_data():
+def test_data(result=None):
     modelname = request.args.get('modelname')
     dim_red = request.args.get('dim_red')
     print("Received {} and {} from request".format(modelname, dim_red))
@@ -60,7 +70,13 @@ def test_data():
         accuracy_score_final = "Unknown"
         f1_score_final = "Unknown"
 
-    return jsonify(predicted_class=str(final_class), accuracy=str(accuracy_score_final), f1score=str(f1_score_final))
+    js = {
+        "predicted_class":str(final_class),
+        "accuracy":str(accuracy_score_final),
+        "f1score":str(f1_score_final)
+        }
+
+    return render_template("index.html",result = json.dumps(js))
 
 if __name__ == "__main__":
     app.run(debug=True)

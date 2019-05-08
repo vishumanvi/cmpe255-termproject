@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Human activity classifier</title>
+
+    <!-- Font Icon -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='./fonts/material-icon/css/material-design-iconic-font.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='./vendor/jquery-ui/jquery-ui.min.css') }}"
+    />
+
+    <!-- Main css -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='./css/style.css') }}"
+    />
+  </head>
+  <body>
+    <script>
+      function getDR() {
+        var fu1 = document.getElementById("test_file");
+        // alert("You selected " + fu1.value);
+        var modelname = document.getElementById("modelname");
+        if (fu1.value.includes("pca")) {
+          document.getElementById("booking-form").action =
+            "http://localhost:5000/test?modelname=" +
+            modelname.value +
+            "&dim_red=PCA";
+          console.log(document.getElementById("booking-form").action);
+        } else {
+          document.getElementById("booking-form").action =
+            "http://localhost:5000/test?modelname=" +
+            modelname.value +
+            "&dim_red=SVD";
+          console.log(document.getElementById("booking-form").action);
+        }
+      }
+
+      function onformsubmit() {
+        let test_file = document.getElementById("test_file").files[0]; // file from input
+        let req = new XMLHttpRequest();
+        let formData = new FormData();
+        // console.log(test_file);
+        formData.append("test_file", test_file);
+        req.open("POST", document.getElementById("booking-form").action);
+        req.send(formData);
+        var result = document.getElementById("result");
+        // req.onreadystatechange = function()
+        // {
+        //   if(this.readyState == 4 && this.status == 200) {
+        //     result.innerHTML = this.responseText;
+        //   } else {
+        //     result.innerHTML = "ERROR";
+        //   }
+        // }
+        req.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            // console.log(result["predicted_value"]);
+            // console.log(this.response[1]);
+            // var myArr = JSON.parse(this.response[1]);
+            // console.log(myArr);
+          }
+        };
+      }
+    </script>
+    <div class="main">
+      <div class="container">
+        <form
+          id="booking-form"
+          class="booking-form"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <div class="form-group">
+            <div class="input-group">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="test_file"
+                  name="test_file"
+                  onchange="getDR(this);"
+                />
+                <label class="custom-file-label" for="inputGroupFile02"
+                  >Choose file</label
+                >
+              </div>
+              <div class="input-group-append">
+                <span class="input-group-text">Upload</span>
+              </div>
+            </div>
+            <div class="form-quantity">
+              <label for="quantity">Classifier</label>
+              <select
+                class="custom-select custom-select-lg mb-3"
+                name="modelname"
+                id="modelname"
+                onchange="getDR(this);"
+                required
+              >
+                <option value="" disabled selected>Select</option>
+                <option value="SVM">SVM</option>
+                <option value="RandomForest">Random Forest</option>
+                <option value="DT">Decision Tree</option>
+                <option value="Adaboost">Boosted Decision Tree</option>
+                <option value="LR">Logistic Regression</option>
+                <option value="CNN">Convolutional Neural Networks</option>
+              </select>
+            </div>
+
+            <div class="form-submit">
+              <input
+                type="submit"
+                id="submit"
+                class="submit"
+                value="Classify"
+              />
+            </div>
+          </div>
+        </form>
+
+        <div>
+          <table id="example" class="display" style="width:100%"></table>
+
+          <div id="res1" class="results">{{ result }}</div>
+          <div id="res2" class="results">{{ result }}</div>
+          <div id="res3" class="results">{{ result }}</div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='./vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='./vendor/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/main.js') }}"></script>
+    <script>
+      //   $(document).ready(function() {
+      //     $("#example").DataTable({
+      //       ajax: {
+      //         // "url": "static/objects2.txt", // This works for the static file
+      //         url: "/index", // This doesn't work
+      //         dataType: "json"
+      //         // "dataSrc": "data",
+      //         // "contentType":"application/json"
+      //       },
+      //       columns: [
+      //         { result: "name" },
+      //         { result: "position" },
+      //         { result: "office" },
+      //         { result: "extn" },
+      //         { result: "start_date" },
+      //         { result: "salary" }
+      //       ]
+      //     });
+      //   });
+    </script>
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
