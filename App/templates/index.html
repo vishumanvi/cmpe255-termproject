@@ -23,14 +23,14 @@
     />
 
     <!-- Main css -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='./css/style.css') }}"
-    />
+    <link rel="stylesheet" href="../static/css/style.css" />
   </head>
   <body>
     <script>
       function getDR() {
+        document.getElementById("filename").innerHTML = document.getElementById(
+          "test_file"
+        ).value;
         var fu1 = document.getElementById("test_file");
         // alert("You selected " + fu1.value);
         var modelname = document.getElementById("modelname");
@@ -77,7 +77,15 @@
       }
     </script>
     <div class="main">
-      <div class="container">
+      <div class="row" style="padding-top: 200px;">
+        <h2
+          style="text-align: center; margin:20px;  padding:20px; width:50%; margin-left: 350px; background: #f8ba0f; border-radius: 5px; box-shadow: 5px;"
+          class="page-heading"
+        >
+          Human Activity Classification
+        </h2>
+      </div>
+      <div class="container" style="margin-top:20px">
         <form
           id="booking-form"
           class="booking-form"
@@ -94,7 +102,10 @@
                   name="test_file"
                   onchange="getDR(this);"
                 />
-                <label class="custom-file-label" for="inputGroupFile02"
+                <label
+                  class="custom-file-label"
+                  id="filename"
+                  for="inputGroupFile02"
                   >Choose file</label
                 >
               </div>
@@ -103,7 +114,7 @@
               </div>
             </div>
             <div class="form-quantity">
-              <label for="quantity">Classifier</label>
+              <label style="font-size: 15px;" for="quantity">Classifier</label>
               <select
                 class="custom-select custom-select-lg mb-3"
                 name="modelname"
@@ -135,18 +146,19 @@
         <div>
           <table id="example" class="display" style="width:100%"></table>
 
-		  {% if result is defined %}
-			
-          <table border="1" style="width:100%;text-align:center;"><tbody>
-            {% for key, segment in result.items() %}
+          {% if result is defined %}
+
+          <table border="1" style="width:100%;text-align:center;">
+            <tbody>
+              {% for key, segment in result.items() %}
               <tr>
                 <td>{{ key }}</td>
                 <td>{{ segment }}</td>
               </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-		{% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
         </div>
       </div>
     </div>

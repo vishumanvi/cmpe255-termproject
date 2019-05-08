@@ -526,4 +526,12 @@ label {
   }
 }
 
+h2 {
+  text-align: center !important;
+}
 /*# sourceMappingURL=style.css.map */
+
+.page-heading {
+  margin: 100px;
+  margin: 10%;
+}
