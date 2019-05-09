@@ -58,7 +58,11 @@ def test_data(result=None):
 	print(test_df.shape)
 	print(labels_df.shape)
 
-	predicted_values = clf.predict(test_df)
+	if modelname == "CNN":
+		predicted_values = clf.predict_classes(test_df, verbose=0)
+	else:
+		predicted_values = clf.predict(test_df)
+
 	counts = np.bincount(predicted_values)
 	final_class = np.argmax(counts)
 	print("final_class is : {}".format(final_class))
